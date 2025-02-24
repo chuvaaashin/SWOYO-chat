@@ -1,0 +1,29 @@
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-color: #000000;
+  --light-color: #FFFFFF;
+  --primary-color: #AE7AFF;
+  --dark-primary-color: #622f7c;
+}
+
+body{
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.btn {
+  width: 100%;
+  height: 24px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  border-radius: 4px;
+  border: 1px solid var(--dark-color);
+  cursor: pointer;
+}
