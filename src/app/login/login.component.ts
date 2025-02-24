@@ -1,12 +1,10 @@
 import {Component, inject} from '@angular/core';
-import {MatFormField} from '@angular/material/form-field';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
   imports: [
-    MatFormField,
     ReactiveFormsModule
   ],
   templateUrl: './login.component.html',
