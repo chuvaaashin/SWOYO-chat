@@ -6,34 +6,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Занимает всю высоту экрана */
-  background-color: var(--dark-color); /* Фон контейнера */
+  height: 100vh;
+  background-color: var(--dark-color);
 }
 
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 80vh; /* Высота контейнера для чата */
-  width: 70%; /* Ширина контейнера */
+  height: 80vh;
+  width: 70%;
   background: var(--grey-color);
   border-radius: 8px;
-  overflow: hidden; /* Прячем всё, что выходит за рамки контейнера */
+  overflow: hidden;
 }
 
 .chat-window {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Заполняет всё доступное пространство */
+  flex-grow: 1;
   padding: 10px;
 }
 
 .messages {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Занимает доступное пространство */
-  overflow-y: auto; /* Прокручиваемая область для сообщений */
+  flex-grow: 1;
+  overflow-y: auto;
   padding: 10px;
-  max-height: calc(100% - 60px); /* Ограничение высоты для области сообщений */
+  max-height: calc(100% - 60px);
 }
 
 .message {
@@ -45,29 +45,24 @@
   flex-direction: row;
   padding: 10px;
   background: var(--grey-color);
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Тень для формы */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   position: sticky;
   bottom: 0;
-  z-index: 1; /* Убедитесь, что форма всегда поверх сообщений */
+  z-index: 1;
 }
 
 .message-input {
-  flex: 1; /* Поле ввода занимает всю ширину */
+  flex: 1;
 }
 
 .btn {
-  height: 100%;
+  height: 75%;
   width: 15%;
-  background-color: #5c6bc0; /* Цвет кнопки */
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--light-color);
   border: none;
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #3f51b5; /* Цвет при наведении */
 }
