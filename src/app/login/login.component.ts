@@ -18,7 +18,7 @@ export class LoginComponent {
     username: new FormControl<string | null>('', Validators.required)
 })
 
-  onSubmit(event: Event) {
+  onSubmit() {
     if (this.form.valid) {
       this.router.navigate([''])
       const userName = this.form.value.username;

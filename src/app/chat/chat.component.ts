@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {NgForOf} from '@angular/common';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {MatFormField} from '@angular/material/form-field';
 import {MatInput} from '@angular/material/input';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -17,6 +18,8 @@ import {MatInput} from '@angular/material/input';
   styleUrl: './chat.component.scss'
 })
 export class ChatComponent {
+  router = inject(Router);
+
   storageMessages: {
     username: string, text: string
   }[] = []
@@ -29,6 +32,9 @@ export class ChatComponent {
 
   ngOnInit() {
     this.userName = localStorage.getItem('username');
+    if (!this.userName) {
+      this.router.navigate(['/login']);
+    }
 
     const savedMessages = localStorage.getItem('storageMessages');
     if (savedMessages) {

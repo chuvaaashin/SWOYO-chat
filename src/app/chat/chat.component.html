@@ -1,18 +1,21 @@
-<div class="chat-container">
-  <div class="chat-window">
-    <div class="messages">
-      <div *ngFor="let msg of storageMessages" class="message">
-        <strong>{{ msg.username }}:</strong> {{ msg.text }}
+<div class="chat-wrapper">
+  <div class="chat-container">
+    <div class="chat-window">
+      <!-- Область для сообщений -->
+      <div class="messages">
+        <div *ngFor="let msg of storageMessages" class="message">
+          <strong>{{ msg.username }}:</strong> {{ msg.text }}
+        </div>
       </div>
     </div>
+
+    <!-- Форма для ввода сообщений -->
+    <form (ngSubmit)="addMessage()" [formGroup]="messageForm" class="message-form">
+      <mat-form-field appearance="outline" class="message-input">
+        <input matInput formControlName="message" placeholder="Ваше сообщение" />
+      </mat-form-field>
+
+      <button class="btn" type="submit">Отправить</button>
+    </form>
   </div>
-
-  <form (ngSubmit)="addMessage()" [formGroup]="messageForm" class="message-form">
-    <mat-form-field appearance="fill" class="message-input">
-      <label>Введите сообщение...</label>
-      <input matInput formControlName="message" placeholder="Ваше сообщение" />
-    </mat-form-field>
-
-    <button mat-raised-button color="primary" type="submit">Отправить</button>
-  </form>
 </div>
