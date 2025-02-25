@@ -1,18 +1,16 @@
 <div class="chat-wrapper">
   <div class="chat-container">
     <div class="chat-window">
-      <!-- Область для сообщений -->
       <div class="messages">
         <div *ngFor="let msg of storageMessages" class="message">
-          <strong>{{ msg.username }}:</strong> {{ msg.text }}
+          <strong>{{ msg.username }}:</strong> {{ msg.text }} <span class="time-in-message">{{ msg.time }}</span>
         </div>
       </div>
     </div>
 
-    <!-- Форма для ввода сообщений -->
     <form (ngSubmit)="addMessage()" [formGroup]="messageForm" class="message-form">
-      <mat-form-field appearance="outline" class="message-input">
-        <input matInput formControlName="message" placeholder="  Ваше сообщение" />
+      <mat-form-field appearance="outline" class="message-input-field">
+        <input matInput formControlName="message" class="message-input" placeholder="Ваше сообщение" />
       </mat-form-field>
 
       <button class="btn" type="submit">Отправить</button>

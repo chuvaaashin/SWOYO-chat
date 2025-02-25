@@ -21,7 +21,7 @@ export class BroadcastChannelService {
     });
   }
 
-  sendMessage(message: { username: string; text: string }) {
+  sendMessage(message: { username: string; text: string; time: string }) {
     const jsonMessage = JSON.stringify(message);
     if (this.channel) {
       this.channel.postMessage(jsonMessage);
@@ -33,7 +33,7 @@ export class BroadcastChannelService {
     });
   }
 
-  listenMessages(callback: (message: { username: string; text: string }) => void) {
+  listenMessages(callback: (message: { username: string; text: string; time: string}) => void) {
     if (this.channel) {
       this.channel.onmessage = (event) => {
         try {

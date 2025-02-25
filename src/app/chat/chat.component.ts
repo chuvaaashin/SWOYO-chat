@@ -22,7 +22,12 @@ export class ChatComponent implements OnInit, OnDestroy {
   router = inject(Router);
   broadcastService = inject(BroadcastChannelService);
 
-  storageMessages: { username: string; text: string }[] = [];
+  storageMessages: {
+    username: string;
+    text: string;
+    time: string;
+  }[] = [];
+
   userName: string | null = '';
   checkStorageInterval: any;
 
@@ -50,7 +55,11 @@ export class ChatComponent implements OnInit, OnDestroy {
   addMessage() {
     const message = this.messageForm.value.message;
     if (message && this.userName) {
-      const newMessage = { text: message, username: this.userName };
+      const newMessage = {
+        text: message,
+        username: this.userName,
+        time: new Date().toLocaleTimeString(),
+      };
 
       this.storageMessages.push(newMessage);
       this.saveMessagesToStorage();
@@ -80,7 +89,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     localStorage.setItem('storageMessages', JSON.stringify(this.storageMessages));
   }
 
-  private handleNewMessage(message: { username: string; text: string }) {
+  private handleNewMessage(message: { username: string; text: string; time: string }) {
     this.storageMessages.push(message);
     this.saveMessagesToStorage();
   }

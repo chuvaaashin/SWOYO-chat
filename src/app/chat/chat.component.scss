@@ -52,11 +52,22 @@
   z-index: 1;
 }
 
-.message-input {
+.message-input-field {
   flex: 1;
 }
 
+.message-input {
+  padding: 10px 15px;
+}
+
+.time-in-message {
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
 .btn {
+  margin-left: 15px;
   height: 75%;
   width: 15%;
   background-color: var(--primary-color);
