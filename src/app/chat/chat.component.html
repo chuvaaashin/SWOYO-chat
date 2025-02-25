@@ -3,7 +3,9 @@
     <div class="chat-window">
       <div class="messages">
         <div *ngFor="let msg of storageMessages" class="message">
-          <strong>{{ msg.username }}:</strong> {{ msg.text }} <span class="time-in-message">{{ msg.time }}</span>
+         <span class="nickname-in-message">{{ msg.username }}: </span>
+          <div class="text-in-message"> {{ msg.text }}</div>
+          <span class="time-in-message">{{ msg.time }}</span>
         </div>
       </div>
     </div>
